@@ -87,19 +87,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label>SKU</label>
-            <input type="text" name="sku" class="form-control" value="<?php echo $sku ?>">
+            <input required type="text" name="sku" class="form-control" value="<?php echo $sku ?>">
         </div>
         <div class="form-group">
             <label>Title</label>
-            <input type="text" name="title" class="form-control" value="<?php echo $title ?>">
+            <input required type="text" name="title" class="form-control" value="<?php echo $title ?>">
         </div>
         <div class="form-group">
             <label>Price</label>
-            <input type="number" step=".01" name="price" class="form-control" value="<?php echo $price ?>">
+            <input required type="number" step=".01" name="price" class="form-control" value="<?php echo $price ?>">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>Size</label>
             <input type="text" name="size_mb" class="form-control" value="<?php echo $size_mb ?>">
+        </div> -->
+        <div class="form-group">
+            <label>Product Type</label>
+            <select required id="productType" name="type" class="form-select">
+                <option>Book</option>
+                <option>Disc</option>
+                <option>Furniture</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
