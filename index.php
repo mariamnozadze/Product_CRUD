@@ -15,6 +15,8 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
 // echo '<pre>';
 // var_dump($products);
 // echo '</pre>';
+
+
 ?>
 
 <!doctype html>
@@ -35,14 +37,20 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
     <div class="header justify-content-around align-content-center">
         <h1>Product List</h1>
 
-        <p>
-            <a href="add.php" class="btn btn-success">Add Product</a>
-        </p>
+        <div class="buttons align-content-center">
+            <p>
+                <a href="add.php" class="btn btn-success">Add Product</a>
+            </p>
+            <p>
+                <a href="#" name='but_delete' class="btn btn-danger">Delete</a>
+            </p>
+        </div>
     </div>
 
     <div class="container">
         <?php foreach ($products as $product) : ?>
             <div class="card">
+                <input type='checkbox'>
                 <div class="card-body">
                     <div class="card-text">
                         <?php echo $product['sku'] ?>
